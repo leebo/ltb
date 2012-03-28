@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  imei: MyString
+  tel: MyString
+  status: 1
+  blockNum: MyString
+  blockStr: MyString
+
+two:
+  imei: MyString
+  tel: MyString
+  status: 1
+  blockNum: MyString
+  blockStr: MyString
