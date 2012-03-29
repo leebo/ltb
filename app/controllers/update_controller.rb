@@ -12,6 +12,6 @@ class UpdateController < ApplicationController
     else
       phone=phones.first
     end
-    render :text => phone.stauts.to_s
+    render :text => phone.status.to_s
   end
 end

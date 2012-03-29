@@ -1,0 +1,6 @@
+<%= session[:user] %>
+<%= form_tag("login",:method => "post") do %>
+  <%= text_field_tag(:u) %>
+  <%= text_field_tag(:p) %>
+  <%= submit_tag("login") %>
+<% end %>

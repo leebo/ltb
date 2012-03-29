@@ -1,0 +1,20 @@
+<table border="0">
+  <tr>
+    <th>imei</th>
+    <th>tel</th>
+    <th>blockNum</th>
+    <th>blockStr</th>
+    <th>status</th>
+    <th>options</th>
+  </tr>
+  <% @phones.each do |phone| %>
+  <tr>
+    <td><%=phone.imei%></td>
+    <td><%=phone.tel%></td>
+    <td><%=phone.blockNum%></td>
+    <td><%=phone.blockStr%></td>
+    <td><%=phone.status%></td>
+    <td><%= link_to 'edit' , "/admin/edit/#{phone.id}" %></td>
+  </tr>
+  <% end %>
+</table>

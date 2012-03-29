@@ -1,0 +1,8 @@
+<%= form_for @phone, :url => "/admin/update/#{@phone.id}" do |f| %>
+  <%= f.text_field :imei %>
+  <%= f.text_field :tel %>
+  <%= f.text_field :blockNum %>
+  <%= f.text_field :blockStr %>
+  <%= f.text_field :status %>
+  <%= f.submit %>
+<% end %>
