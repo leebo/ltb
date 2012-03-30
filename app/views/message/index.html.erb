@@ -1,0 +1,15 @@
+<table border="0">
+  <tr>
+      <th>tel</th>
+  <th>context</th>
+  <th>time</th>
+
+  </tr>
+  <% @messages.each do |message| %>
+    <tr>
+      <td><%= message.tel %></td>
+    <td><%= message.context %></td>
+    <td><%= message.create_at %></td>
+    </tr>
+  <% end %>
+</table>

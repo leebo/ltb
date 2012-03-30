@@ -16,7 +16,7 @@
     <td><%=phone.blockStr%></td>
     <td><%=phone.status%></td>
     <td><%= alive? phone.imei %></td>
-    <td><%= link_to 'edit' , "/admin/edit/#{phone.id}" %></td>
+    <td><%= link_to 'edit' , "/admin/edit/#{phone.id}" %>  <%= link_to "show", "/message/index/#{phone.id}" %></td>
   </tr>
   <% end %>
 </table>
