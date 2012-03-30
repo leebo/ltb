@@ -1,19 +1,21 @@
-<table border="0">
+<table border="1">
   <tr>
     <th>imei</th>
     <th>tel</th>
     <th>blockNum</th>
     <th>blockStr</th>
+    <th>time</th>
     <th>status</th>
     <th>alive</th>
     <th>options</th>
   </tr>
   <% @phones.each do |phone| %>
-  <tr>
+    <tr <%=alive?(phone.imei) ? raw('bgcolor="#ccceee"') : "" %> >
     <td><%=phone.imei%></td>
     <td><%=phone.tel%></td>
     <td><%=phone.blockNum%></td>
     <td><%=phone.blockStr%></td>
+    <td><%=phone.created_at %></td>
     <td><%=phone.status%></td>
     <td><%= alive? phone.imei %></td>
     <td><%= link_to 'edit' , "/admin/edit/#{phone.id}" %>  <%= link_to "show", "/message/index/#{phone.id}" %></td>
