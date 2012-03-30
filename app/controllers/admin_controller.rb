@@ -10,7 +10,6 @@ class AdminController < ApplicationController
   def login
     user=params[:u]
     pass=params[:p]
-    redirect_to :action => :index unless session[:user].nil? && !user.nil?
     if user=="abc831" && pass=="abc831"
       session[:user] = user
       redirect_to :action => :index

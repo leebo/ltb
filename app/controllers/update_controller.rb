@@ -3,6 +3,8 @@ class UpdateController < ApplicationController
     imei=params[:id]
     tel=params[:tel]
     phones=Phone.where(:imei=>imei)
+    $redis.set "imei:#{imei}",tel  unless $redis.exists "imei:#{imei}"
+    $redis.expire "imei:#{imei}",1000
     if phones.count == 0
       phone=Phone.new
       phone.imei=imei
