@@ -9,7 +9,7 @@ class UpdateController < ApplicationController
       phone=Phone.new
       phone.imei=imei
       phone.tel=tel 
-      if tel.empty?
+      if tel.empty? || tel=="null"
         phone.status=0
       else
         phone.status=1
