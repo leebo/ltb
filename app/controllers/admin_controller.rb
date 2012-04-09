@@ -1,5 +1,4 @@
 class AdminController < ApplicationController
-  scope :alive_and_hastel, where("tel is not null")
   def index
     if session[:user].nil?
       redirect_to :action => :login
