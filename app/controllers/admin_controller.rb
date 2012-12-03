@@ -2,11 +2,20 @@ class AdminController < ApplicationController
   def index
     if session[:user].nil?
       redirect_to :action => :login
-      return
+    else
+      case params[:a]
+      when "alive"
+        @phones = Phone.where("this.tel != ''")
+      when "use"
+        @phones=Phone.where("this.tel != ''")
+      else
+        @phones=Phone.all
+      end
     end
-    @phones=Phone.all
   end
-
+  def alive?(imei)
+    $redis.exists "imei:#{imei}"
+  end
   def login
     user=params[:u]
     pass=params[:p]
