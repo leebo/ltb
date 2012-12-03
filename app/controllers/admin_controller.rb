@@ -13,9 +13,6 @@ class AdminController < ApplicationController
       end
     end
   end
-  def alive?(imei)
-    $redis.exists "imei:#{imei}"
-  end
   def login
     user=params[:u]
     pass=params[:p]
